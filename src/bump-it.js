@@ -21,7 +21,7 @@ commander
 commander.parse(process.argv);
 
 // list all tag: git tag -l --sort=-v:refname
-const lastTagCommand = 'git describe --tags';
+const lastTagCommand = 'git describe --abbrev=0 --tags';
 const lastTagCommandResult = command(lastTagCommand);
 const lastTag = lastTagCommandResult.split('\n')[0];
 
