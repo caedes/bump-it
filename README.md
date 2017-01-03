@@ -10,10 +10,20 @@ Install:
 npm install bump-it
 ```
 
-Run the command:
+How to use it:
 
 ```shell
-bump-it major|minor|patch
+bump-it -h
+
+# Usage: bump-it [options]
+#
+# Bump your version and tag it appropriately.
+#
+# Options:
+#
+#   -h, --help                  output usage information
+#   -V, --version               output the version number
+#   -i --increment [increment]  Version to increment [major|minor|patch]
 ```
 
 ## License
