@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 
 import commander from 'commander';
+import fs from 'fs';
 import semver from 'semver';
 
 import { version, description } from '../package.json';
@@ -36,8 +37,10 @@ const nextTagSemver = semver.inc(lastTagSemver, commander.increment);
 // write changelogs into CHANGELOG
 
 // write version into package.json if exists
-const bumpNpmVersionCommand = `npm --no-git-tag-version version ${nextTagSemver}`;
-command(bumpNpmVersionCommand);
+if (fs.existsSync('./package.json')) {
+  const bumpNpmVersionCommand = `npm --no-git-tag-version version ${nextTagSemver}`;
+  command(bumpNpmVersionCommand);
+}
 
 // git commit
 command(`git commit -am "Bump version to v${nextTagSemver}"`);
