@@ -1,6 +1,5 @@
 #! /usr/bin/env node
 
-import { bold } from 'chalk';
 import commander from 'commander';
 import semver from 'semver';
 
@@ -14,7 +13,7 @@ commander
 commander
   .option(
     '-i --increment [increment]',
-    `Version to increment [major|minor|${bold('patch')}]`,
+    'Version to increment [major|minor|patch] (default: patch)',
     /^(major|minor|patch)$/i,
     'patch',
   );
